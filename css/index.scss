@@ -20,6 +20,15 @@ body
 	background-color : white;
 }
 
+img
+{
+	display         : block;
+	font-style      : italic;
+	max-inline-size : 100%;
+	block-size      : auto;
+	user-select     : none;
+}
+
 .screen-reader-only
 {
 	width     : 1px;
