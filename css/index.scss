@@ -2,7 +2,13 @@
 
 :root
 {
-	box-sizing : border-box;
+	--spanish-orange   : hsla(22, 89%, 52%, 1);
+	--atomic-tangerine : hsla(22, 100%, 69%, 1);
+	--oxford-blue      : hsla(220, 50%, 17%, 1);
+	--cool-gray        : hsla(221, 23%, 58%, 1);
+	--alice-blue       : hsla(198, 28%, 93%, 1);
+
+	box-sizing         : border-box;
 }
 
 *,
@@ -16,7 +22,11 @@
 
 body
 {
+	font-family      : "Barlow", sans-serif;
+	font-weight      : 500;
+	line-height      : ratio(26, 16);
 	min-height       : 100vh;
+	color            : var(--cool-gray);
 	background-color : white;
 }
 
@@ -29,6 +39,83 @@ img
 	user-select     : none;
 }
 
+h1,
+h2,
+h3
+{
+	font-weight    : 900;
+	text-transform : uppercase;
+	text-wrap      : balance;
+	color          : var(--oxford-blue)
+}
+
+h1
+{
+	font-size   : toRem(48);
+	line-height : 1;
+}
+
+h2
+{
+	font-size   : toRem(32);
+	line-height : ratio(36, 32);
+}
+
+h3
+{
+	font-size   : toRem(24);
+	line-height : ratio(28, 24);
+}
+
+
+// Utilities --------------------------------------------------------------------
+
+.button
+{
+	--transition-duration : 300ms;
+	display               : inline-block;
+	text-decoration       : none;
+	padding-inline        : toRem(14);
+	padding-block         : toRem(11);
+	border-radius         : toRem(8);
+	transition            : background-color var(--transition-duration) ease;
+}
+
+.button.primary
+{
+	color            : white;
+	background-color : var(--spanish-orange);
+
+	&:hover
+	{
+		background-color : var(--atomic-tangerine);
+	}
+}
+
+.button.secondary
+{
+	color            : var(--oxford-blue);
+	background-color : var(--alice-blue);
+	transition       : background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+
+	&:hover
+	{
+		color            : white;
+		background-color : var(--oxford-blue);
+	}
+}
+
+.icon
+{
+	display          : flex;
+	aspect-ratio     : 1;
+	max-inline-size  : toRem(65);
+	justify-content  : center;
+	align-items      : center;
+	background-color : var(--spanish-orange);
+	border-radius    : toRem(16);
+}
+
 .screen-reader-only
 {
 	width     : 1px;
@@ -39,4 +126,31 @@ img
 	overflow  : hidden;
 	clip      : rect(1px, 1px, 1px, 1px);
 	clip-path : inset(50%);
+}
+
+
+// Tablet -----------------------------------------------------------------------
+
+@media (width >= toRem(768))
+{
+	// Utilities ----------------------------------------------------------------
+
+	.button
+	{
+		padding-inline : toRem(27);
+		padding-block  : toRem(16);
+	}
+}
+
+
+// Desktop ----------------------------------------------------------------------
+
+@media (width >= toRem(1440))
+{
+	// Typography ---------------------------------------------------------------
+
+	h1
+	{
+		font-size : toRem(56);
+	}
 }
