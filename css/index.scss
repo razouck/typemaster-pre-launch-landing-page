@@ -1,0 +1,33 @@
+@import "functions";
+
+:root
+{
+	box-sizing : border-box;
+}
+
+*,
+::before,
+::after
+{
+	margin     : 0;
+	padding    : 0;
+	box-sizing : inherit;
+}
+
+body
+{
+	min-height       : 100vh;
+	background-color : white;
+}
+
+.screen-reader-only
+{
+	width     : 1px;
+	height    : 1px;
+	position  : absolute;
+	padding   : 0;
+	margin    : -1px;
+	overflow  : hidden;
+	clip      : rect(1px, 1px, 1px, 1px);
+	clip-path : inset(50%);
+}
