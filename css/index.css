@@ -113,9 +113,11 @@ article h2 {
   max-inline-size: 17ch;
   margin-inline: auto;
 }
-article > p {
-  max-inline-size: 22.125rem;
+article p {
+  max-inline-size: 36ch;
   margin-inline: auto;
+}
+article > p {
   margin-block-start: 1.5rem;
 }
 article ul {

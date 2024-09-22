@@ -159,10 +159,14 @@ article
 		margin-inline   : auto;
 	}
 
+	p
+	{
+		max-inline-size : 36ch;
+		margin-inline   : auto;
+	}
+
 	> p
 	{
-		max-inline-size    : toRem(354);
-		margin-inline      : auto;
 		margin-block-start : toRem(24);
 	}
 
