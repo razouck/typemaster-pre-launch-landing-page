@@ -180,27 +180,27 @@ article
 		max-inline-size : toRem(354);
 		margin-inline   : auto;
 		list-style      : none;
-	}
 
-	li + li
-	{
-		margin-block-start : toRem(64);
-	}
+		+ li
+		{
+			margin-block-start : toRem(64);
+		}
 
-	li > *
-	{
-		margin-inline : auto;
-	}
+		> *
+		{
+			margin-inline : auto;
+		}
 
-	li > h3
-	{
-		max-inline-size    : 15ch;
-		margin-block-start : toRem(49);
-	}
+		> h3
+		{
+			max-inline-size    : 15ch;
+			margin-block-start : toRem(49);
+		}
 
-	li > p
-	{
-		margin-block-start : toRem(23);
+		> p
+		{
+			margin-block-start : toRem(23);
+		}
 	}
 }
 
