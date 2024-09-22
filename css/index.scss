@@ -20,6 +20,12 @@
 	box-sizing : inherit;
 }
 
+::selection
+{
+	color            : white;
+	background-color : var(--spanish-orange);
+}
+
 body
 {
 	font-family      : "Barlow", sans-serif;
@@ -30,14 +36,22 @@ body
 	background-color : white;
 }
 
+img,
+picture
+{
+	display : block;
+}
+
 img
 {
-	display         : block;
 	font-style      : italic;
 	max-inline-size : 100%;
 	block-size      : auto;
 	user-select     : none;
 }
+
+
+// Typography -------------------------------------------------------------------
 
 h1,
 h2,
@@ -68,17 +82,151 @@ h3
 }
 
 
+// Header -----------------------------------------------------------------------
+
+header
+{
+	padding-block-start : toRem(23);
+	overflow-x : hidden;
+
+	> div,
+	picture:first-of-type
+	{
+		margin-block-start : toRem(64);
+	}
+
+	nav,
+	> div
+	{
+		padding-inline : toRem(21);
+	}
+
+	.button:not(.primary):not(.secondary)
+	{
+		padding-inline-start : toRem(29);
+	}
+
+	picture:first-of-type
+	{
+		margin-inline-start : toRem(21);
+
+		> img
+		{
+			border-radius : toRem(32) 0 0 toRem(32);
+		}
+	}
+
+	picture:nth-of-type(2),
+	picture:nth-of-type(3)
+	{
+		display : inline-block;
+	}
+
+	picture:nth-of-type(3)
+	{
+		max-inline-size : toRem(220);
+	}
+}
+
+nav > ul
+{
+	align-items : center;
+
+	li
+	{
+		list-style : none;
+	}
+
+	li:first-child
+	{
+		max-block-size : toRem(40);
+	}
+}
+
+
+// Main -------------------------------------------------------------------------
+
+article
+{
+	text-align         : center;
+	margin-block-start : toRem(68);
+
+	h2
+	{
+		max-inline-size : 17ch;
+		margin-inline   : auto;
+	}
+
+	> p
+	{
+		margin-inline      : toRem(21);
+		margin-block-start : toRem(24);
+	}
+
+	ul
+	{
+		margin-block-start : toRem(111);
+	}
+
+	li
+	{
+		margin-inline : toRem(21);
+		list-style    : none;
+	}
+
+	li + li
+	{
+		margin-block-start : toRem(64);
+	}
+
+	li > *
+	{
+		margin-inline : auto;
+	}
+
+	li > h3
+	{
+		max-inline-size    : 15ch;
+		margin-block-start : toRem(49);
+	}
+
+	li > p
+	{
+		margin-block-start : toRem(23);
+	}
+}
+
+
+// Footer -----------------------------------------------------------------------
+
+footer
+{
+	text-align         : center;
+	margin-block-start : toRem(95);
+	margin-block-end   : toRem(50);
+}
+
+
 // Utilities --------------------------------------------------------------------
+
+.bold
+{
+	font-weight : 700;
+}
 
 .button
 {
 	--transition-duration : 300ms;
+
 	display               : inline-block;
+	font-weight           : 700;
+	text-transform        : uppercase;
 	text-decoration       : none;
 	padding-inline        : toRem(14);
 	padding-block         : toRem(11);
 	border-radius         : toRem(8);
 	transition            : background-color var(--transition-duration) ease;
+	user-select           : none;
 }
 
 .button.primary
@@ -105,6 +253,11 @@ h3
 	}
 }
 
+.flow > * + *
+{
+	margin-block-start : toRem(32);
+}
+
 .icon
 {
 	display          : flex;
@@ -116,23 +269,77 @@ h3
 	border-radius    : toRem(16);
 }
 
-.screen-reader-only
+.space-between
 {
-	width     : 1px;
-	height    : 1px;
-	position  : absolute;
-	padding   : 0;
-	margin    : -1px;
-	overflow  : hidden;
-	clip      : rect(1px, 1px, 1px, 1px);
-	clip-path : inset(50%);
+	display         : flex;
+	justify-content : space-between;
 }
 
 
+// Decoration -------------------------------------------------------------------
+
+.image-keyboard,
+.image-phone-and-keyboard,
+.image-glass-and-keyboard
+{
+	background-size : cover;
+}
+
+.image-keyboard,
+.image-phone-and-keyboard
+{
+	position : relative;
+}
+
+.image-phone-and-keyboard,
+.image-glass-and-keyboard
+{
+	display            : inline-block;
+	block-size         : toRem(193);
+	margin-block-start : toRem(24);
+}
+
+.image-keyboard
+{
+	inset-inline-start : toRem(21);
+	inline-size        : toRem(372);
+	block-size         : toRem(331);
+	background-image   : url(../assets/mobile/image-keyboard.jpg);
+	border-radius      : toRem(24) 0 0 toRem(24);
+}
+
+.image-phone-and-keyboard
+{
+	inset-inline-start    : toRem(-22);
+	inline-size           : toRem(129);
+	background-color      : var(--spanish-orange);
+	background-image      : url(../assets/mobile/image-phone-and-keyboard.jpg);
+	background-blend-mode : multiply;
+	border-radius         : 0 toRem(24) toRem(24) 0;
+}
+
+.image-glass-and-keyboard
+{
+	inline-size      : toRem(220);
+	background-image : url(../assets/mobile/image-glass-and-keyboard.jpg);
+	border-radius    : toRem(24);
+}
+
+
+// ------------------------------------------------------------------------------
 // Tablet -----------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 @media (width >= toRem(768))
 {
+	// Main ---------------------------------------------------------------------
+
+	article
+	{
+		text-align : initial;
+	}
+
+
 	// Utilities ----------------------------------------------------------------
 
 	.button
@@ -140,10 +347,25 @@ h3
 		padding-inline : toRem(27);
 		padding-block  : toRem(16);
 	}
+
+
+	// Decoration ---------------------------------------------------------------
+
+	.image-phone-and-keyboard
+	{
+		background-image : url(../assets/tablet/image-phone-and-keyboard.jpg);
+	}
+
+	.image-glass-and-keyboard
+	{
+		background-image : url(../assets/tablet/image-glass-and-keyboard.jpg);
+	}
 }
 
 
+// ------------------------------------------------------------------------------
 // Desktop ----------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 @media (width >= toRem(1440))
 {
@@ -152,5 +374,18 @@ h3
 	h1
 	{
 		font-size : toRem(56);
+	}
+
+
+	// Decoration ---------------------------------------------------------------
+
+	.image-phone-and-keyboard
+	{
+		background-image : url(../assets/desktop/image-phone-and-keyboard.jpg);
+	}
+
+	.image-glass-and-keyboard
+	{
+		background-image : url(../assets/desktop/image-glass-and-keyboard.jpg);
 	}
 }
