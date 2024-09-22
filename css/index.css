@@ -66,7 +66,9 @@ h3 {
 }
 
 header {
+  max-inline-size: 23.4375rem;
   padding-block-start: 1.4375rem;
+  margin-inline: auto;
   overflow-x: hidden;
 }
 header > div,
@@ -76,6 +78,15 @@ header picture:first-of-type {
 header nav,
 header > div {
   padding-inline: 1.3125rem;
+}
+header nav > ul {
+  align-items: center;
+}
+header nav > ul li {
+  list-style: none;
+}
+header nav > ul li:first-child {
+  max-block-size: 2.5rem;
 }
 header .button:not(.primary):not(.secondary) {
   padding-inline-start: 1.8125rem;
@@ -94,16 +105,6 @@ header picture:nth-of-type(3) {
   max-inline-size: 13.75rem;
 }
 
-nav > ul {
-  align-items: center;
-}
-nav > ul li {
-  list-style: none;
-}
-nav > ul li:first-child {
-  max-block-size: 2.5rem;
-}
-
 article {
   text-align: center;
   margin-block-start: 4.25rem;
@@ -113,14 +114,16 @@ article h2 {
   margin-inline: auto;
 }
 article > p {
-  margin-inline: 1.3125rem;
+  max-inline-size: 22.125rem;
+  margin-inline: auto;
   margin-block-start: 1.5rem;
 }
 article ul {
   margin-block-start: 6.9375rem;
 }
 article li {
-  margin-inline: 1.3125rem;
+  max-inline-size: 22.125rem;
+  margin-inline: auto;
   list-style: none;
 }
 article li + li {
@@ -139,6 +142,8 @@ article li > p {
 
 footer {
   text-align: center;
+  max-inline-size: 23.4375rem;
+  margin-inline: auto;
   margin-block-start: 5.9375rem;
   margin-block-end: 3.125rem;
 }
@@ -164,7 +169,7 @@ footer {
   color: white;
   background-color: var(--spanish-orange);
 }
-.button.primary:hover {
+.button.primary:active {
   background-color: var(--atomic-tangerine);
 }
 
@@ -173,7 +178,7 @@ footer {
   background-color: var(--alice-blue);
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
-.button.secondary:hover {
+.button.secondary:active {
   color: white;
   background-color: var(--oxford-blue);
 }
@@ -201,6 +206,7 @@ footer {
 .image-phone-and-keyboard,
 .image-glass-and-keyboard {
   background-size: cover;
+  border-radius: 1.5rem;
 }
 
 .image-keyboard,
@@ -220,7 +226,6 @@ footer {
   inline-size: 23.25rem;
   block-size: 20.6875rem;
   background-image: url(../assets/mobile/image-keyboard.jpg);
-  border-radius: 1.5rem 0 0 1.5rem;
 }
 
 .image-phone-and-keyboard {
@@ -229,13 +234,11 @@ footer {
   background-color: var(--spanish-orange);
   background-image: url(../assets/mobile/image-phone-and-keyboard.jpg);
   background-blend-mode: multiply;
-  border-radius: 0 1.5rem 1.5rem 0;
 }
 
 .image-glass-and-keyboard {
   inline-size: 13.75rem;
   background-image: url(../assets/mobile/image-glass-and-keyboard.jpg);
-  border-radius: 1.5rem;
 }
 
 @media (width >= 48rem) {

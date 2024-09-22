@@ -86,8 +86,10 @@ h3
 
 header
 {
+	max-inline-size     : toRem(375);
 	padding-block-start : toRem(23);
-	overflow-x : hidden;
+	margin-inline       : auto;
+	overflow-x          : hidden;
 
 	> div,
 	picture:first-of-type
@@ -99,6 +101,21 @@ header
 	> div
 	{
 		padding-inline : toRem(21);
+	}
+
+	nav > ul
+	{
+		align-items : center;
+
+		li
+		{
+			list-style : none;
+		}
+
+		li:first-child
+		{
+			max-block-size : toRem(40);
+		}
 	}
 
 	.button:not(.primary):not(.secondary)
@@ -128,21 +145,6 @@ header
 	}
 }
 
-nav > ul
-{
-	align-items : center;
-
-	li
-	{
-		list-style : none;
-	}
-
-	li:first-child
-	{
-		max-block-size : toRem(40);
-	}
-}
-
 
 // Main -------------------------------------------------------------------------
 
@@ -159,7 +161,8 @@ article
 
 	> p
 	{
-		margin-inline      : toRem(21);
+		max-inline-size    : toRem(354);
+		margin-inline      : auto;
 		margin-block-start : toRem(24);
 	}
 
@@ -170,8 +173,9 @@ article
 
 	li
 	{
-		margin-inline : toRem(21);
-		list-style    : none;
+		max-inline-size : toRem(354);
+		margin-inline   : auto;
+		list-style      : none;
 	}
 
 	li + li
@@ -202,6 +206,8 @@ article
 footer
 {
 	text-align         : center;
+	max-inline-size    : toRem(375);
+	margin-inline      : auto;
 	margin-block-start : toRem(95);
 	margin-block-end   : toRem(50);
 }
@@ -234,7 +240,7 @@ footer
 	color            : white;
 	background-color : var(--spanish-orange);
 
-	&:hover
+	&:active
 	{
 		background-color : var(--atomic-tangerine);
 	}
@@ -246,7 +252,7 @@ footer
 	background-color : var(--alice-blue);
 	transition       : background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 
-	&:hover
+	&:active
 	{
 		color            : white;
 		background-color : var(--oxford-blue);
@@ -283,6 +289,7 @@ footer
 .image-glass-and-keyboard
 {
 	background-size : cover;
+	border-radius   : toRem(24);
 }
 
 .image-keyboard,
@@ -305,7 +312,6 @@ footer
 	inline-size        : toRem(372);
 	block-size         : toRem(331);
 	background-image   : url(../assets/mobile/image-keyboard.jpg);
-	border-radius      : toRem(24) 0 0 toRem(24);
 }
 
 .image-phone-and-keyboard
@@ -315,14 +321,12 @@ footer
 	background-color      : var(--spanish-orange);
 	background-image      : url(../assets/mobile/image-phone-and-keyboard.jpg);
 	background-blend-mode : multiply;
-	border-radius         : 0 toRem(24) toRem(24) 0;
 }
 
 .image-glass-and-keyboard
 {
 	inline-size      : toRem(220);
 	background-image : url(../assets/mobile/image-glass-and-keyboard.jpg);
-	border-radius    : toRem(24);
 }
 
 
