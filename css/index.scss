@@ -91,14 +91,8 @@ header
 	margin-inline       : auto;
 	overflow-x          : hidden;
 
-	> div,
-	picture:first-of-type
-	{
-		margin-block-start : toRem(64);
-	}
-
 	nav,
-	> div
+	> div:not([class^="image"])
 	{
 		padding-inline : toRem(21);
 	}
@@ -118,30 +112,14 @@ header
 		}
 	}
 
+	> div:not([class^="image"])
+	{
+		margin-block-start : toRem(64);
+	}
+
 	.button:not(.primary):not(.secondary)
 	{
 		padding-inline-start : toRem(29);
-	}
-
-	picture:first-of-type
-	{
-		margin-inline-start : toRem(21);
-
-		> img
-		{
-			border-radius : toRem(32) 0 0 toRem(32);
-		}
-	}
-
-	picture:nth-of-type(2),
-	picture:nth-of-type(3)
-	{
-		display : inline-block;
-	}
-
-	picture:nth-of-type(3)
-	{
-		max-inline-size : toRem(220);
 	}
 }
 
@@ -153,16 +131,20 @@ article
 	text-align         : center;
 	margin-block-start : toRem(68);
 
+	h2,
+	p
+	{
+		margin-inline : auto;
+	}
+
 	h2
 	{
 		max-inline-size : 17ch;
-		margin-inline   : auto;
 	}
 
 	p
 	{
 		max-inline-size : 36ch;
-		margin-inline   : auto;
 	}
 
 	> p
@@ -226,7 +208,7 @@ footer
 
 .button
 {
-	--transition-duration : 300ms;
+	--transition-duration : 100ms;
 
 	display               : inline-block;
 	font-weight           : 700;
@@ -312,9 +294,10 @@ footer
 
 .image-keyboard
 {
-	inset-inline-start : toRem(21);
 	inline-size        : toRem(372);
 	block-size         : toRem(331);
+	inset-inline-start : toRem(21);
+	margin-block-start : toRem(64);
 	background-image   : url(../assets/mobile/image-keyboard.jpg);
 }
 
@@ -340,11 +323,110 @@ footer
 
 @media (width >= toRem(768))
 {
+	header,
+	article
+	{
+		display         : flex;
+		align-items     : center;
+		flex-wrap       : wrap;
+		max-inline-size : toRem(768);
+	}
+
+	article
+	{
+		margin-inline : auto;
+	}
+
+
+	// Header -------------------------------------------------------------------
+
+	header
+	{
+		row-gap             : toRem(40);
+		column-gap          : toRem(30);
+		padding-block-start : toRem(40);
+
+		nav
+		{
+			flex-basis       : 100%;
+			padding-inline   : toRem(40);
+			margin-block-end : toRem(22);
+		}
+
+		> div:not([class^="image"])
+		{
+			max-inline-size     : toRem(375);
+			padding-inline      : unset;
+			margin-inline-start : toRem(40);
+			margin-block-start  : unset;
+		}
+	}
+
+
 	// Main ---------------------------------------------------------------------
 
 	article
 	{
-		text-align : initial;
+		text-align         : initial;
+		margin-block-start : toRem(72);
+
+		h2,
+		> p
+		{
+			margin-inline : unset;
+			margin-block  : unset;
+		}
+
+		h2
+		{
+			max-inline-size     : 14ch;
+			margin-inline-start : toRem(40);
+			margin-inline-end   : toRem(36);
+		}
+
+		> p
+		{
+			max-inline-size : 42ch;
+		}
+
+		ul
+		{
+			display               : grid;
+			grid-template-columns : 1fr 1fr;
+			row-gap               : toRem(73);
+			column-gap            : toRem(69);
+			max-inline-size       : toRem(631);
+			margin-inline-start   : toRem(40);
+			margin-block-start    : toRem(142);
+		}
+
+		li
+		{
+			max-inline-size : unset;
+		}
+
+		li + li
+		{
+			margin-block-start : unset;
+		}
+
+		li > *
+		{
+			margin-inline : unset;
+		}
+
+		li > h3
+		{
+			margin-block-start : toRem(40);
+		}
+	}
+
+
+	// Footer -------------------------------------------------------------------
+
+	footer
+	{
+		margin-block-start : toRem(142);
 	}
 
 
@@ -356,16 +438,45 @@ footer
 		padding-block  : toRem(16);
 	}
 
+	.flow > * + *
+	{
+		margin-block-start : toRem(45);
+	}
+
 
 	// Decoration ---------------------------------------------------------------
 
+	.image-phone-and-keyboard,
+	.image-glass-and-keyboard
+	{
+		display            : block;
+		block-size         : toRem(320);
+		margin-block-start : unset;
+	}
+
+	.image-keyboard
+	{
+		inline-size                : toRem(321);
+		block-size                 : toRem(425);
+		inset-inline-start         : toRem(2);
+		margin                     : 0;
+		background-image           : url("../assets/tablet/image-keyboard.jpg");
+		border-top-right-radius    : 0;
+		border-bottom-right-radius : 0;
+	}
+
 	.image-phone-and-keyboard
 	{
-		background-image : url(../assets/tablet/image-phone-and-keyboard.jpg);
+		position            : unset;
+		inset-inline-start  : unset;
+		inline-size         : toRem(214);
+		margin-inline-start : toRem(40);
+		background-image    : url(../assets/tablet/image-phone-and-keyboard.jpg);
 	}
 
 	.image-glass-and-keyboard
 	{
+		inline-size      : toRem(445);
 		background-image : url(../assets/tablet/image-glass-and-keyboard.jpg);
 	}
 }
