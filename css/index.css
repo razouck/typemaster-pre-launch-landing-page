@@ -122,11 +122,11 @@ article li + li {
 article li > * {
   margin-inline: auto;
 }
-article li > h3 {
+article li h3 {
   max-inline-size: 15ch;
   margin-block-start: 3.0625rem;
 }
-article li > p {
+article li p {
   margin-block-start: 1.4375rem;
 }
 
@@ -304,9 +304,6 @@ footer {
     padding-inline: 1.6875rem;
     padding-block: 1rem;
   }
-  .flow > * + * {
-    margin-block-start: 2.8125rem;
-  }
   .image-phone-and-keyboard,
   .image-glass-and-keyboard {
     display: block;
@@ -335,13 +332,112 @@ footer {
   }
 }
 @media (width >= 90rem) {
+  header,
+  article {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: unset;
+    flex-wrap: unset;
+    max-inline-size: 90rem;
+    padding-inline: 10.3125rem;
+  }
+  article {
+    column-gap: 1.875rem;
+  }
   h1 {
     font-size: 3.5rem;
   }
+  header {
+    row-gap: 1.875rem;
+    padding-block-start: 3.4375rem;
+    margin-inline: auto;
+    margin-block-end: -26.25rem;
+  }
+  header nav {
+    grid-row-start: 1;
+    grid-column: 1/5;
+    flex-basis: unset;
+    padding-inline: unset;
+    margin-block-end: 3.3125rem;
+  }
+  header > div:not([class^=image]) {
+    grid-row-start: 2;
+    grid-column: 1/3;
+    max-inline-size: unset;
+    margin-inline-start: unset;
+    margin-inline-end: 5.9375rem;
+    margin-block-start: 3.75rem;
+  }
+  header > div:not([class^=image]) > p {
+    font-size: 1.125rem;
+    line-height: 1.4444444444;
+    margin-block-start: 1.5rem;
+  }
+  header > div:not([class^=image]) > div {
+    margin-block-start: 2.5rem;
+  }
+  article {
+    margin-block-start: unset;
+  }
+  article h2,
+  article > p {
+    grid-column: 4/5;
+  }
+  article h2 {
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+    margin-block-start: 3.25rem;
+  }
+  article > p {
+    grid-row-start: 2;
+    margin-block-start: 1.6875rem;
+  }
+  article p {
+    max-inline-size: unset;
+  }
+  article ul {
+    grid-row-start: 3;
+    grid-column: 1/5;
+    grid-template-columns: subgrid;
+    row-gap: unset;
+    column-gap: 1.875rem;
+    max-inline-size: unset;
+    margin-inline-start: unset;
+    margin-block-start: 16.9375rem;
+  }
+  article li:first-of-type {
+    margin-block: auto;
+  }
+  article li h3 {
+    margin-block-start: 3rem;
+  }
+  footer {
+    margin-block-start: 8rem;
+    margin-block-end: 2.5rem;
+  }
+  [class^=image] {
+    block-size: 30rem;
+  }
+  .image-keyboard {
+    grid-row-start: 2;
+    grid-column: 3/5;
+    inline-size: 33.75rem;
+    background-image: url(../assets/desktop/image-keyboard.jpg);
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+  .image-phone-and-keyboard,
+  .image-glass-and-keyboard {
+    grid-row-start: 3;
+  }
   .image-phone-and-keyboard {
+    inline-size: 15.9375rem;
+    margin-inline-start: unset;
     background-image: url(../assets/desktop/image-phone-and-keyboard.jpg);
   }
   .image-glass-and-keyboard {
+    grid-column-end: span 2;
+    inline-size: 27.8125rem;
     background-image: url(../assets/desktop/image-glass-and-keyboard.jpg);
   }
 }

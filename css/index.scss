@@ -173,13 +173,13 @@ article
 			margin-inline : auto;
 		}
 
-		> h3
+		h3
 		{
 			max-inline-size    : 15ch;
 			margin-block-start : toRem(49);
 		}
 
-		> p
+		p
 		{
 			margin-block-start : toRem(23);
 		}
@@ -438,11 +438,6 @@ footer
 		padding-block  : toRem(16);
 	}
 
-	.flow > * + *
-	{
-		margin-block-start : toRem(45);
-	}
-
 
 	// Decoration ---------------------------------------------------------------
 
@@ -488,6 +483,23 @@ footer
 
 @media (width >= toRem(1440))
 {
+	header,
+	article
+	{
+		display               : grid;
+		grid-template-columns : repeat(4, 1fr);
+		align-items           : unset;
+		flex-wrap             : unset;
+		max-inline-size       : toRem(1440);
+		padding-inline        : toRem(165);
+	}
+
+	article
+	{
+		column-gap : toRem(30);
+	}
+
+
 	// Typography ---------------------------------------------------------------
 
 	h1
@@ -496,15 +508,146 @@ footer
 	}
 
 
+	// Header -------------------------------------------------------------------
+
+	header
+	{
+		row-gap             : toRem(30);
+		padding-block-start : toRem(55);
+		margin-inline       : auto;
+		margin-block-end    : toRem(-420);
+
+		nav
+		{
+			grid-row-start   : 1;
+			grid-column      : 1 / 5;
+			flex-basis       : unset;
+			padding-inline   : unset;
+			margin-block-end : toRem(53);
+		}
+
+		> div:not([class^="image"])
+		{
+			grid-row-start      : 2;
+			grid-column         : 1 / 3;
+			max-inline-size     : unset;
+			margin-inline-start : unset;
+			margin-inline-end   : toRem(95);
+			margin-block-start  : toRem(60);
+		}
+
+		> div:not([class^="image"]) > p
+		{
+			font-size          : toRem(18);
+			line-height        : ratio(26, 18);
+			margin-block-start : toRem(24);
+		}
+
+		> div:not([class^="image"]) > div
+		{
+			margin-block-start : toRem(40);
+		}
+	}
+
+
+	// Main ---------------------------------------------------------------------
+
+	article
+	{
+		margin-block-start : unset;
+
+		h2,
+		> p
+		{
+			grid-column : 4 / 5;
+		}
+
+
+		h2
+		{
+			margin-inline-start : unset;
+			margin-inline-end   : unset;
+			margin-block-start  : toRem(52);
+		}
+
+		> p
+		{
+			grid-row-start     : 2;
+			margin-block-start : toRem(27);
+		}
+
+		p
+		{
+			max-inline-size : unset;
+		}
+
+		ul
+		{
+			grid-row-start        : 3;
+			grid-column           : 1 / 5;
+			grid-template-columns : subgrid;
+			row-gap               : unset;
+			column-gap            : toRem(30);
+			max-inline-size       : unset;
+			margin-inline-start   : unset;
+			margin-block-start    : toRem(271);
+		}
+
+		li:first-of-type
+		{
+			margin-block : auto;
+		}
+
+		li h3
+		{
+			margin-block-start : toRem(48);
+		}
+	}
+
+
+	// Footer -------------------------------------------------------------------
+
+	footer
+	{
+		margin-block-start : toRem(128);
+		margin-block-end   : toRem(40);
+	}
+
+
 	// Decoration ---------------------------------------------------------------
+
+	[class^="image"]
+	{
+		block-size : toRem(480);
+	}
+
+	.image-keyboard
+	{
+		grid-row-start             : 2;
+		grid-column                : 3 / 5;
+		inline-size                : toRem(540);
+		background-image           : url(../assets/desktop/image-keyboard.jpg);
+		border-top-right-radius    : toRem(24);
+		border-bottom-right-radius : toRem(24);
+	}
+
+	.image-phone-and-keyboard,
+	.image-glass-and-keyboard
+	{
+		grid-row-start : 3;
+	}
 
 	.image-phone-and-keyboard
 	{
-		background-image : url(../assets/desktop/image-phone-and-keyboard.jpg);
+		inline-size         : toRem(255);
+		margin-inline-start : unset;
+		background-image    : url(../assets/desktop/image-phone-and-keyboard.jpg);
 	}
 
 	.image-glass-and-keyboard
 	{
+		grid-column-end  : span 2;
+		inline-size      : toRem(445);
 		background-image : url(../assets/desktop/image-glass-and-keyboard.jpg);
 	}
 }
