@@ -87,6 +87,12 @@ header nav > ul li:first-child {
 header > div:not([class^=image]) {
   margin-block-start: 4rem;
 }
+header > div:not([class^=image]) > p {
+  margin-block-start: 1.75rem;
+}
+header > div:not([class^=image]) > div {
+  margin-block-start: 2.25rem;
+}
 header .button:not(.primary):not(.secondary) {
   padding-inline-start: 1.8125rem;
 }

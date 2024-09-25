@@ -117,6 +117,16 @@ header
 		margin-block-start : toRem(64);
 	}
 
+	> div:not([class^="image"]) > p
+	{
+		margin-block-start : toRem(28);
+	}
+
+	> div:not([class^="image"]) > div
+	{
+		margin-block-start : toRem(36);
+	}
+
 	.button:not(.primary):not(.secondary)
 	{
 		padding-inline-start : toRem(29);
