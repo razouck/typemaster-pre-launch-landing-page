@@ -537,6 +537,9 @@ footer
 		padding-block-start : toRem(55);
 		margin-inline       : auto;
 		margin-block-end    : toRem(-420);
+		background-image    : url("../assets/shared/pattern-square.svg"), url("../assets/shared/pattern-square.svg");
+		background-repeat   : no-repeat;
+		background-position : left toRem(-120) bottom 0, right toRem(-122) top toRem(195);
 
 		nav
 		{

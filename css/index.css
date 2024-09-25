@@ -365,6 +365,9 @@ footer {
     padding-block-start: 3.4375rem;
     margin-inline: auto;
     margin-block-end: -26.25rem;
+    background-image: url("../assets/shared/pattern-square.svg"), url("../assets/shared/pattern-square.svg");
+    background-repeat: no-repeat;
+    background-position: left -7.5rem bottom 0, right -7.625rem top 12.1875rem;
   }
   header nav {
     grid-row-start: 1;
