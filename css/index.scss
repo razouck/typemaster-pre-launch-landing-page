@@ -360,6 +360,16 @@ footer
 			margin-inline-start : toRem(40);
 			margin-block-start  : unset;
 		}
+
+		> div:not([class^="image"]) > p
+		{
+			margin-block-start : toRem(34);
+		}
+
+		> div:not([class^="image"]) > div
+		{
+			margin-block-start : toRem(39);
+		}
 	}
 
 
@@ -427,6 +437,7 @@ footer
 	footer
 	{
 		margin-block-start : toRem(142);
+		margin-block-end   : toRem(44);
 	}
 
 
