@@ -245,6 +245,10 @@ footer {
     transition-duration: 0s !important;
   }
 }
+* {
+  animation: none !important;
+}
+
 .slide-in {
   --duration: 500ms;
   --stagger: 0.3;
