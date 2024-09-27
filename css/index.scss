@@ -327,6 +327,48 @@ footer
 }
 
 
+// Animation --------------------------------------------------------------------
+
+@media (prefers-reduced-motion : reduce)
+{
+	*
+	{
+		animation           : none !important;
+		animation-duration  : 0s !important;
+		transition-duration : 0s !important;
+	}
+}
+
+.slide-in
+{
+	--duration                : 500ms;
+	--stagger                 : 0.3;
+	--delay                   : calc(var(--i) * var(--stagger) * var(--duration));
+
+	animation-duration        : var(--duration);
+	animation-timing-function : ease-out;
+	animation-delay           : var(--delay);
+	animation-fill-mode       : backwards;
+	animation-name            : slide-in;
+	animation-play-state      : var(--play-state, running);
+}
+
+@keyframes slide-in
+{
+	from
+	{
+		transform : translateY(-3vw);
+		opacity   : 0;
+	}
+
+	to
+	{
+		transform : translateY(0);
+		opacity   : 1;
+	}
+}
+
+
 // ------------------------------------------------------------------------------
 // Tablet -----------------------------------------------------------------------
 // ------------------------------------------------------------------------------
@@ -494,6 +536,28 @@ footer
 	{
 		inline-size      : toRem(445);
 		background-image : url(../assets/tablet/image-glass-and-keyboard.jpg);
+	}
+
+
+	// Animation ----------------------------------------------------------------
+	.slide-in
+	{
+		--duration : 900ms;
+	}
+
+	@keyframes slide-in
+	{
+		from
+		{
+			transform : translateX(-3vw);
+			opacity   : 0;
+		}
+
+		to
+		{
+			transform : translateX(0);
+			opacity   : 1;
+		}
 	}
 }
 
@@ -673,5 +737,28 @@ footer
 		grid-column-end  : span 2;
 		inline-size      : toRem(445);
 		background-image : url(../assets/desktop/image-glass-and-keyboard.jpg);
+	}
+
+
+	// Animation ----------------------------------------------------------------
+
+	.slide-in
+	{
+		--duration : 1s;
+	}
+
+	@keyframes slide-in
+	{
+		from
+		{
+			transform : translateX(-6vw);
+			opacity   : 0;
+		}
+
+		to
+		{
+			transform : translateX(0);
+			opacity   : 1;
+		}
 	}
 }
