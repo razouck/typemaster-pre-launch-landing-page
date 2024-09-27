@@ -339,10 +339,6 @@ footer
 	}
 }
 
-*
-{
-	animation : none !important;
-}
 
 .slide-in
 {
@@ -356,6 +352,11 @@ footer
 	animation-fill-mode       : backwards;
 	animation-name            : slide-in;
 	animation-play-state      : var(--play-state, running);
+}
+
+.slide-in
+{
+	animation : none !important;
 }
 
 @keyframes slide-in

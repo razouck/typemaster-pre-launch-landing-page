@@ -245,10 +245,6 @@ footer {
     transition-duration: 0s !important;
   }
 }
-* {
-  animation: none !important;
-}
-
 .slide-in {
   --duration: 500ms;
   --stagger: 0.3;
@@ -259,6 +255,10 @@ footer {
   animation-fill-mode: backwards;
   animation-name: slide-in;
   animation-play-state: var(--play-state, running);
+}
+
+.slide-in {
+  animation: none !important;
 }
 
 @keyframes slide-in {
