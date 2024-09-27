@@ -20,7 +20,7 @@ for ( let i = 0; i < elements.length; i++ )
 {
 	const element = elements[ i ];
 
-	element.style.setProperty( "--play-state", "paused" );
+	element.style.setProperty( "--play-state", "running" );
 
 	observer.observe( element );
 }
