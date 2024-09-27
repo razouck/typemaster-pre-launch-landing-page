@@ -257,10 +257,6 @@ footer {
   animation-play-state: var(--play-state, running);
 }
 
-.slide-in {
-  animation: none !important;
-}
-
 @keyframes slide-in {
   from {
     transform: translateY(-3vw);
